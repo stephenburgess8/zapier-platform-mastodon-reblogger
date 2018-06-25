@@ -1,5 +1,3 @@
-# zapier-platform-example-app-github
+# zapier-platform-mastodon-reblloger
 
-An example app that helps kickstart your journey as a Zapier [developer](https://zapier.com/developer/). Once logged in, you can see the tutorial itself [here](https://zapier.com/developer/start/introduction).
-
-You can learn more about the CLI [here](https://github.com/zapier/zapier-platform-cli).
+Using a hashtag search, reblog status posts from one instance of Mastodon to another using the [Mastodon API](https://github.com/tootsuite/documentation/blob/master/Using-the-API/API.md).
