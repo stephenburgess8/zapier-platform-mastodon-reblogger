@@ -70,30 +70,35 @@ module.exports = {
         key: 'term',
         type: 'string',
         label: 'Search Term',
+        required: true,
         helpText: 'Enter a term with no spaces to search for hashtags on the instance'
       },
       {
         key: 'searchHost',
         type: 'string',
         label: 'Search Host',
+        required: true,
         helpText: 'Enter the simple domain of the host whose API you\'d like to use (e.g. Mastodon.Social)'
       },
       {
         key: 'searchHostBearerToken',
         type: 'string',
         label: 'Search Host Bearer Token',
+        required: true,
         helpText: 'Enter your bearer token to use the API of the host you\'ve chosen'
       },
       {
         key: 'reblogHost',
         type: 'string',
         label: 'Reblog Host',
+        required: true,
         helpText: 'Enter the simple domain of the host where you will be reblogging'
       },
       {
         key: 'reblogHostBearerToken',
         type: 'string',
         label: 'Reblog Host Bearer Token',
+        required: true,
         helpText: 'Enter the bearer token to use the API of the host where you\'ll be reblogging'
       },
     ],
