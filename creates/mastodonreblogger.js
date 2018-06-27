@@ -39,18 +39,22 @@ const perform = (z, bundle) => {
     .then(response => {
       if (response.content) {
         const content = JSON.parse(response.content);
-        const account = content.reblog.account.acct;
-        const followOptions = {
-          headers: {
-            authorization: 'Bearer ' + bundle.inputData.reblogHostBearerToken
-          },
-          method: 'POST',
-          body: {
-            uri: account
-          }
-        };
-        const followUrl = `https://${ bundle.inputData.reblogHost }/api/v1/follows`;
-        return z.request(followUrl, followOptions);
+        const locked = content.reblog.account.locked;
+        if (!locked) {
+          const account = content.reblog.account.acct;
+
+          const followOptions = {
+            headers: {
+              authorization: 'Bearer ' + bundle.inputData.reblogHostBearerToken
+            },
+            method: 'POST',
+            body: {
+              uri: account
+            }
+          };
+          const followUrl = `https://${ bundle.inputData.reblogHost }/api/v1/follows`;
+          return z.request(followUrl, followOptions);
+        }
       }
       return {};
     });
