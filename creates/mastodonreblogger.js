@@ -23,10 +23,9 @@ const perform = (z, bundle) => {
       if (content.statuses.length > 0) {
         const status = content.statuses[0];
         const noBot = status.account.note.indexOf('nobot') !== -1;
-        
         const reblogOptions = {
           headers: {
-            authorization: 'Bearer ' + bundle.inputData.reblogHostBearerToken;
+            authorization: 'Bearer ' + bundle.inputData.reblogHostBearerToken
           },
           method: 'POST'
         };
@@ -43,7 +42,7 @@ const perform = (z, bundle) => {
         const account = content.reblog.account.acct;
         const followOptions = {
           headers: {
-            authorization: 'Bearer ' + bundle.inputData.reblogHostBearerToken;
+            authorization: 'Bearer ' + bundle.inputData.reblogHostBearerToken
           },
           method: 'POST',
           body: {
@@ -53,8 +52,7 @@ const perform = (z, bundle) => {
         const followUrl = `https://${ bundle.inputData.reblogHost }/api/v1/follows`;
         return z.request(followUrl, followOptions);
       }
-      
-      return {}
+      return {};
     });
 }
 
