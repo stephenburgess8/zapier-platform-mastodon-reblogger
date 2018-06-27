@@ -9,3 +9,5 @@ In general, auto reblog bots should not be set to reblog more than once per hour
 
 # Functionality
 Within Zapier, use the default Schedule app function to trigger no more than once per hour. Typically once per day will suffice. Then, enter in the required information including the term for which you'd like to search. If there have been more than one post since the last time the bot ran, it will miss any but the most recent post. For that reason, don't expect this bot to post every post using a hashtag from the source instance.
+
+This bot follows accounts that it reblogs from (that aren't locked accounts). If you want to disable that functionality, remove the final async call from the chain, and the series of actions will end on the reblog.
